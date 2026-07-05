@@ -14,7 +14,11 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Backend running");
+  res.json({
+    status: "online",
+    service: "Growth Companion API",
+    version: "1.0.0",
+  });
 });
 
 app.use("/api/chat", chatRouter);
