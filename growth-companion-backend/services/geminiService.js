@@ -3,6 +3,9 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+console.log("GEMINI_API_KEY:", process.env.GEMINI_API_KEY?.slice(0, 10));
+console.log("GEMINI_MODEL:", process.env.GEMINI_MODEL);
+
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
