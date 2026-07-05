@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+*{
+  font-family: "Outfit", sans-serif;
+}
+
+@theme{
+--color-primary: #E6CCFF;
+}
+
+::-webkit-scrollbar {
+display: none;
+}
+
+.reset-tw :not(pre):not(code){
+  all: revert;
+}
+
+.loader div:nth-child(2){
+  animation-delay: 0.2s;
+}
+
+.loader div:nth-child(3){
+  animation-delay: 0.3s;
+}
+
+@keyframes rotate-beam {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes trace-border {
+    0% {
+      stroke-dashoffset: 100; /* Smooth mathematical lap start */
+    }
+    100% {
+      stroke-dashoffset: 0;   /* Smooth mathematical lap end */
+    }
+  }
+
+  @keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 20ch; } /* Fix: Caps the width perfectly at 16 characters */
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.animate-typing {
+  animation: typing 2.5s steps(20) forwards, blink 0.7s step-end infinite;
+}
